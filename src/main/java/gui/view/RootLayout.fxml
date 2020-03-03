@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane prefHeight="300.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.view.RootLayoutController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#handleLoad" text="Load html" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleAppendLoad" text="Append html" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleSaveAsTxt" text="Save as txt" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleSaveAsXml" text="Save as xml" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Tool">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#handleTime" text="GenerateTimestamp" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="About">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Contact" />
+              </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+</BorderPane>
