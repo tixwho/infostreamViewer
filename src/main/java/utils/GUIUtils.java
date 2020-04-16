@@ -23,6 +23,19 @@ public class GUIUtils {
         }
         return cumulativeCount;
     }
+    
+    public static int[] freqOblistCount(ObservableList<DailyPost>postData) {
+        int cumulativeCount = 0;
+        int freqUserCount = 0;
+        for(int i=0;i<postData.size();i++) {
+            if(postData.get(i).getISFREQUENT()) {
+                freqUserCount +=1;
+                cumulativeCount += postData.get(i).getPOSTCOUNT();
+            }
+        }
+        int[] rtrArray = {freqUserCount,cumulativeCount};
+        return rtrArray;
+    }
     //examine if topN is parsable
     public static int tryParse(String input) {
         try {

@@ -2,7 +2,9 @@ package gui;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import gui.model.DailyPost;
@@ -20,15 +22,21 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import reader.FrequentUserReader;
 import reader.StreamUserReader;
 import utils.CountUtils;
 import utils.GUIUtils;
 import writer.XMLwriter;
 
+/**
+ * MainApp of javaFx GUI.
+ * 
+ * @author tixwho
+ *
+ */
+
 public class MainApp extends Application {
-    /**
-     * atomicInteger：用于统计用户单击按钮的次数
-     */
+
     private Stage primaryStage;
     private BorderPane rootLayout;
     private ObservableList<DailyPost> postData = FXCollections.observableArrayList();
@@ -39,12 +47,13 @@ public class MainApp extends Application {
 
     public MainApp() {
         /*
-         * postData.add(new DailyPost("wac",11)); postData.add(new DailyPost("Sta",10));
-         * postData.add(new DailyPost("cow",9)); postData.add(new DailyPost("Sta",8));
-         * postData.add(new DailyPost("Sta",7)); postData.add(new DailyPost("Sta",6));
-         * postData.add(new DailyPost("Sta",5)); postData.add(new DailyPost("Sta",4));
-         * postData.add(new DailyPost("Sta",3)); postData.add(new DailyPost("Sta",2));
-         * postData.add(new DailyPost("Sta",2)); postData.add(new DailyPost("Sta",1));
+         * Used to add data into ObservableList when testing. postData.add(new DailyPost("wac",11));
+         * postData.add(new DailyPost("Sta",10)); postData.add(new DailyPost("cow",9));
+         * postData.add(new DailyPost("Sta",8)); postData.add(new DailyPost("Sta",7));
+         * postData.add(new DailyPost("Sta",6)); postData.add(new DailyPost("Sta",5));
+         * postData.add(new DailyPost("Sta",4)); postData.add(new DailyPost("Sta",3));
+         * postData.add(new DailyPost("Sta",2)); postData.add(new DailyPost("Sta",2));
+         * postData.add(new DailyPost("Sta",1));
          */
     }
 
@@ -61,6 +70,12 @@ public class MainApp extends Application {
     }
 
     /* Methods */
+    /**
+     * catch handleLoad method in RootLayoutController. clear the observable list before loading new
+     * file.
+     * 
+     * @param file
+     */
     public void loadPostFromFile(File file) {
         try {
             this.postData.clear();
@@ -81,9 +96,18 @@ public class MainApp extends Application {
         Pcontroller.setSummaryLabel(postData, 5);
 
     }
-    
+
+    /**
+     * Catch handleAppendLoad method in RootLayoutController. First create a map<String,DailyPost>
+     * for index use, then load the new html file. Iterate through list containing frequency of
+     * username in new file. If find username in map, retrieve the DailyPost object, add count. If
+     * not, create a new DailyPost object. Finally put DailyPost objects back to observable list.
+     * Use sorting method build in utility class to sort the new observable list.
+     * 
+     * @param file
+     */
     public void appendPostFromFile(File file) {
-        
+
         try {
             StreamUserReader rd = new StreamUserReader(file);
             List<String> allPostCountList = rd.getPostUserList();
@@ -91,25 +115,25 @@ public class MainApp extends Application {
                 CountUtils.orderedFreqList(CountUtils.sortUserFrequency(allPostCountList));
             int userCount = orderedFreqList.size();
             // collect into a map for index
-            HashMap<String,DailyPost> currentMap = new HashMap<String,DailyPost>();
-            for(DailyPost iPost:postData) {
-                currentMap.put(iPost.getUSERNAME(),iPost);
+            HashMap<String, DailyPost> currentMap = new HashMap<String, DailyPost>();
+            for (DailyPost iPost : postData) {
+                currentMap.put(iPost.getUSERNAME(), iPost);
             }
             // if contained in the map, add to count; if not, add a new object.
             for (int i = 0; i < userCount; i++) {
                 String userQuerying = orderedFreqList.get(i).getKey();
                 int userQueryingCount = orderedFreqList.get(i).getValue();
-                if(currentMap.containsKey(userQuerying)) {
+                if (currentMap.containsKey(userQuerying)) {
                     DailyPost checkPost = currentMap.get(userQuerying);
-                    checkPost.setPOSTCOUNT(checkPost.getPOSTCOUNT()+userQueryingCount);
-                }else {
-                    currentMap.put(userQuerying,new DailyPost(userQuerying, userQueryingCount));
+                    checkPost.setPOSTCOUNT(checkPost.getPOSTCOUNT() + userQueryingCount);
+                } else {
+                    currentMap.put(userQuerying, new DailyPost(userQuerying, userQueryingCount));
                 }
-                
+
             }
-            //clear old observable list
+            // clear old observable list
             postData.clear();
-            currentMap.forEach((k,v)->postData.add(v));
+            currentMap.forEach((k, v) -> postData.add(v));
             CountUtils.sortObservableArrList(postData);
         } catch (IOException e) {
             System.out.println("IOE!");
@@ -119,6 +143,43 @@ public class MainApp extends Application {
         Pcontroller.setSummaryLabel(postData, 5);
 
     }
+    
+    /**
+     * Iterate through postData, if frequentUserList contains any, set for DailyPost object.
+     * @param frequentUserList
+     */
+    
+    public int setFrequent(File inFile) {
+        int statusReturn = 0;
+        FrequentUserReader rd;
+        try {
+            rd = new FrequentUserReader(inFile);
+        } catch (IOException e) {
+            e.printStackTrace();
+            return statusReturn = -1;
+        }
+        ArrayList<String> frequentUserList = rd.getFrequentUserList();
+        
+        Iterator<DailyPost> objIter = postData.iterator();
+        if (frequentUserList.size()==0) {
+            return statusReturn;
+        }
+        while(objIter.hasNext()) {
+            DailyPost iPost = objIter.next();
+            if(frequentUserList.contains(iPost.getUSERNAME())) {
+                iPost.setISFREQUENT(true);
+                
+            }
+        }
+        
+        Pcontroller.setSummaryLabel(postData, Integer.parseInt(Pcontroller.getTopNumTextField()));
+        return statusReturn = 1;
+    }
+
+    /**
+     * Catch saveAsXML function in RootLayoutController. For more details, please refer to
+     * writer/XMLwriter.
+     */
 
     public void saveXML() {
         XMLwriter writer = new XMLwriter(Pcontroller.getPostOverviewSummary(), postData);

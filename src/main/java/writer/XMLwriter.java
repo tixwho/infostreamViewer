@@ -71,6 +71,13 @@ public class XMLwriter {
         topNPostCount.setText(String.valueOf(summary.getTopNPostCount()));
         Element topNPostProportion = topNPost.addElement("TopNPostProportion");
         topNPostProportion.setText(summary.getTopNProportionAsText());
+        Element frequentUser = overview.addElement("FrequentUser");
+        Element frequentUserCount = frequentUser.addElement("FrequentUserCount");
+        frequentUserCount.setText(String.valueOf(summary.getFreqUserCount()));
+        Element frequentUserPostCount = frequentUser.addElement("FrequentUserPostCount");
+        frequentUserPostCount.setText(String.valueOf(summary.getFreqPostCount()));
+        Element frequentUserPostProportion = frequentUser.addElement("FrequentUserPostProportion");
+        frequentUserPostProportion.setText(summary.getFreqProportionAsText());
         //set up counting part;
         Element usercount = root.addElement("DetailedUserCount");
         Iterator<DailyPost> postCountIter = postData.iterator();
@@ -79,6 +86,8 @@ public class XMLwriter {
             Element userpost = usercount.addElement("UserPost");
             Element username = userpost.addElement("Username");
             username.setText(thisPost.getUSERNAME());
+            Element userfrequent = userpost.addElement("UserFrequent");
+            userfrequent.setText(String.valueOf(thisPost.getISFREQUENT()));
             Element postcount = userpost.addElement("PostCount");
             postcount.setText(String.valueOf(thisPost.getPOSTCOUNT()));
         }

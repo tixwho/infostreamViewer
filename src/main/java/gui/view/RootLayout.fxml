@@ -14,6 +14,8 @@
               <MenuItem mnemonicParsing="false" onAction="#handleLoad" text="Load html" />
                   <MenuItem mnemonicParsing="false" onAction="#handleAppendLoad" text="Append html" />
                   <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleLoadFrequentTxt" text="Load FrequentUser txt" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
                   <MenuItem mnemonicParsing="false" onAction="#handleSaveAsTxt" text="Save as txt" />
                   <MenuItem mnemonicParsing="false" onAction="#handleSaveAsXml" text="Save as xml" />
             </items>

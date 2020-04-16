@@ -14,6 +14,13 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import utils.GUIUtils;
 
+/**
+ * Controller of PostOverview (currently the panel in the middle.)
+ * 
+ * @author tixwho
+ *
+ */
+
 public class PostOverviewController {
 
     @FXML
@@ -24,8 +31,10 @@ public class PostOverviewController {
     private TableColumn<DailyPost, Integer> postcountColumn;
     @FXML
     private TableColumn<DailyPost, Boolean> isfrequentColumn;
-    @FXML 
-    private PieChart chart = new PieChart();
+    @FXML
+    private PieChart topPieChart = new PieChart();
+    @FXML
+    private PieChart freqPieChart = new PieChart();
 
 
     @FXML
@@ -34,12 +43,13 @@ public class PostOverviewController {
     private Label SummaryLabel;
 
 
-    ObservableList<PieChart.Data>  pieData = FXCollections.observableArrayList();
+    ObservableList<PieChart.Data> topPieData = FXCollections.observableArrayList();
+    ObservableList<PieChart.Data> freqPieData = FXCollections.observableArrayList();
     PostOverviewSummary summary = new PostOverviewSummary();
-    
+
     private MainApp mainApp;
 
-        
+
     /**
      * The constructor. The constructor is called before the initialize() method.
      */
@@ -56,12 +66,23 @@ public class PostOverviewController {
         // Add observable list data to the table
         postTable.setItems(mainApp.getPostData());
     }
-    
-    public void setPieChart(int topN,int total) {
-        pieData.clear();
-        pieData.add(new PieChart.Data("top",topN));
-        pieData.add(new PieChart.Data("rest",total-topN));
-        this.chart.setData(pieData);
+
+    public String getTopNumTextField() {
+        return TopNumTextfield.getText();
+    }
+
+    public void setTopPieChart(int topN, int total) {
+        topPieData.clear();
+        topPieData.add(new PieChart.Data("top", topN));
+        topPieData.add(new PieChart.Data("rest", total - topN));
+        this.topPieChart.setData(topPieData);
+    }
+
+    public void setFreqPieChart(int freq, int infreq) {
+        freqPieData.clear();
+        freqPieData.add(new PieChart.Data("freq", freq));
+        freqPieData.add(new PieChart.Data("infreq", infreq));
+        this.freqPieChart.setData(freqPieData);
     }
 
     public void setSummaryLabel(ObservableList<DailyPost> postData, int topNum) {
@@ -73,20 +94,29 @@ public class PostOverviewController {
         } else if (topNum > totalUserCount) {
             this.SummaryLabel.setText("范围过大！请输入小于总人数的数值。");
             return;
-        } else if (topNum==-1) {
+        } else if (topNum == -1) {
             this.SummaryLabel.setText("请输入符合要求的数值！");
             return;
         }
         DecimalFormat df2 = new DecimalFormat("###.00");
         int totalPost = GUIUtils.oblistCount(postData);
         int topNPost = GUIUtils.oblistCount(postData, topNum);
-        float proportion = (float) topNPost / (float) totalPost;
-        this.SummaryLabel.setText("在 " +totalUserCount+"位用户发送的"+ totalPost + "条内容中，内容数前 " + topNum + " 的用户贡献了 "
-        + topNPost + " 条，占比 " + df2.format(proportion * 100) + "%");
-        setPieChart(topNPost,totalPost);
-        this.summary.updateAllInfo(totalUserCount, totalPost, topNum, topNPost, proportion);
+        int[] prepFreq = GUIUtils.freqOblistCount(postData);
+        int freqUserCount = prepFreq[0];
+        int freqPost = prepFreq[1];
+        int infreqPost = totalPost - freqPost;
+        float topProportion = (float) topNPost / (float) totalPost;
+        float freqProportion = (float) freqPost / (float) totalPost;
+        this.SummaryLabel.setText(
+            "在 " + totalUserCount + "位用户发送的" + totalPost + "条内容中，内容数前 " + topNum + " 的用户贡献了 "
+                + topNPost + " 条，占比 " + df2.format(topProportion * 100) + "%; " + freqUserCount
+                + "位常客发送 " + freqPost + "条，占比" + df2.format(freqProportion * 100) + "%");
+        setTopPieChart(topNPost, totalPost);
+        setFreqPieChart(freqPost, infreqPost);
+        this.summary.updateAllInfo(totalUserCount, totalPost, topNum, topNPost, topProportion,
+            freqUserCount, freqPost, infreqPost, freqProportion);
     }
-    
+
     public PostOverviewSummary getPostOverviewSummary() {
         return this.summary;
     }
@@ -110,7 +140,7 @@ public class PostOverviewController {
             .setCellValueFactory(cellData -> cellData.getValue().POSTCOUNTProperty().asObject());
         isfrequentColumn
             .setCellValueFactory(cellData -> cellData.getValue().ISFREQUENTProperty().asObject());
-        //temporarily set 5.
+        // temporarily set 5.
         TopNumTextfield.textProperty().addListener((observable, oldValue, newValue) -> {
             setSummaryLabel(mainApp.getPostData(), GUIUtils.tryParse(newValue));
         });

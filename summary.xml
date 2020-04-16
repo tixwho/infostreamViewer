@@ -2,408 +2,302 @@
 
 <Root>
   <Overview>
-    <TotalUserCount>99</TotalUserCount>
-    <TotalPostCount>900</TotalPostCount>
-    <TopNPostInfo topN="8">
-      <TopNPostCount>464</TopNPostCount>
-      <TopNPostProportion>51.56%</TopNPostProportion>
+    <TotalUserCount>57</TotalUserCount>
+    <TotalPostCount>550</TotalPostCount>
+    <TopNPostInfo topN="5">
+      <TopNPostCount>304</TopNPostCount>
+      <TopNPostProportion>55.27%</TopNPostProportion>
     </TopNPostInfo>
+    <FrequentUser>
+      <FrequentUserCount>3</FrequentUserCount>
+      <FrequentUserPostCount>245</FrequentUserPostCount>
+      <FrequentUserPostProportion>44.55%</FrequentUserPostProportion>
+    </FrequentUser>
   </Overview>
   <DetailedUserCount>
     <UserPost>
       <Username>Κris</Username>
-      <PostCount>281</PostCount>
-    </UserPost>
-    <UserPost>
-      <Username>yichen</Username>
-      <PostCount>36</PostCount>
-    </UserPost>
-    <UserPost>
-      <Username>新声代故</Username>
-      <PostCount>35</PostCount>
+      <UserFrequent>true</UserFrequent>
+      <PostCount>202</PostCount>
     </UserPost>
     <UserPost>
       <Username>雾雨玉兔</Username>
+      <UserFrequent>false</UserFrequent>
       <PostCount>28</PostCount>
     </UserPost>
     <UserPost>
+      <Username>新声代故</Username>
+      <UserFrequent>false</UserFrequent>
+      <PostCount>26</PostCount>
+    </UserPost>
+    <UserPost>
       <Username>Jon_we</Username>
-      <PostCount>27</PostCount>
+      <UserFrequent>false</UserFrequent>
+      <PostCount>26</PostCount>
+    </UserPost>
+    <UserPost>
+      <Username>yichen</Username>
+      <UserFrequent>true</UserFrequent>
+      <PostCount>22</PostCount>
     </UserPost>
     <UserPost>
       <Username>slimeslayer</Username>
+      <UserFrequent>true</UserFrequent>
       <PostCount>21</PostCount>
     </UserPost>
     <UserPost>
-      <Username>三色院堇子</Username>
-      <PostCount>20</PostCount>
-    </UserPost>
-    <UserPost>
-      <Username>嘟噜噜3</Username>
-      <PostCount>16</PostCount>
-    </UserPost>
-    <UserPost>
       <Username>小莉莉☆</Username>
+      <UserFrequent>false</UserFrequent>
       <PostCount>16</PostCount>
-    </UserPost>
-    <UserPost>
-      <Username>幼音</Username>
-      <PostCount>16</PostCount>
-    </UserPost>
-    <UserPost>
-      <Username>辉月</Username>
-      <PostCount>14</PostCount>
-    </UserPost>
-    <UserPost>
-      <Username>俊先生</Username>
-      <PostCount>13</PostCount>
     </UserPost>
     <UserPost>
       <Username>大菠萝荔枝</Username>
+      <UserFrequent>false</UserFrequent>
       <PostCount>13</PostCount>
     </UserPost>
     <UserPost>
-      <Username>世界atlast</Username>
-      <PostCount>13</PostCount>
-    </UserPost>
-    <UserPost>
-      <Username>siji</Username>
-      <PostCount>12</PostCount>
-    </UserPost>
-    <UserPost>
-      <Username>小小坛娘</Username>
+      <Username>嘟噜噜3</Username>
+      <UserFrequent>false</UserFrequent>
       <PostCount>12</PostCount>
     </UserPost>
     <UserPost>
       <Username>Evalone</Username>
+      <UserFrequent>false</UserFrequent>
       <PostCount>12</PostCount>
     </UserPost>
     <UserPost>
+      <Username>辉月</Username>
+      <UserFrequent>false</UserFrequent>
+      <PostCount>11</PostCount>
+    </UserPost>
+    <UserPost>
+      <Username>siji</Username>
+      <UserFrequent>false</UserFrequent>
+      <PostCount>11</PostCount>
+    </UserPost>
+    <UserPost>
       <Username>wang1593570000</Username>
-      <PostCount>11</PostCount>
-    </UserPost>
-    <UserPost>
-      <Username>资源收集者</Username>
-      <PostCount>11</PostCount>
-    </UserPost>
-    <UserPost>
-      <Username>krkrkr</Username>
-      <PostCount>11</PostCount>
+      <UserFrequent>false</UserFrequent>
+      <PostCount>10</PostCount>
     </UserPost>
     <UserPost>
       <Username>cykuku</Username>
-      <PostCount>10</PostCount>
-    </UserPost>
-    <UserPost>
-      <Username>NeverwinterN</Username>
-      <PostCount>10</PostCount>
-    </UserPost>
-    <UserPost>
-      <Username>maestro</Username>
-      <PostCount>9</PostCount>
-    </UserPost>
-    <UserPost>
-      <Username>御露傲娇控</Username>
-      <PostCount>9</PostCount>
-    </UserPost>
-    <UserPost>
-      <Username>567zi</Username>
-      <PostCount>8</PostCount>
-    </UserPost>
-    <UserPost>
-      <Username>secass</Username>
-      <PostCount>8</PostCount>
-    </UserPost>
-    <UserPost>
-      <Username>ku111</Username>
+      <UserFrequent>false</UserFrequent>
       <PostCount>8</PostCount>
     </UserPost>
     <UserPost>
       <Username>EnzOoo</Username>
+      <UserFrequent>false</UserFrequent>
       <PostCount>8</PostCount>
     </UserPost>
     <UserPost>
-      <Username>fireQAQ</Username>
+      <Username>ku111</Username>
+      <UserFrequent>false</UserFrequent>
+      <PostCount>8</PostCount>
+    </UserPost>
+    <UserPost>
+      <Username>骚男</Username>
+      <UserFrequent>false</UserFrequent>
       <PostCount>7</PostCount>
     </UserPost>
     <UserPost>
       <Username>稚嫩的魔法师</Username>
+      <UserFrequent>false</UserFrequent>
       <PostCount>7</PostCount>
-    </UserPost>
-    <UserPost>
-      <Username>ikazuchi</Username>
-      <PostCount>7</PostCount>
-    </UserPost>
-    <UserPost>
-      <Username>骚男</Username>
-      <PostCount>7</PostCount>
-    </UserPost>
-    <UserPost>
-      <Username>潮汐初音</Username>
-      <PostCount>7</PostCount>
-    </UserPost>
-    <UserPost>
-      <Username>轻雾星辰</Username>
-      <PostCount>7</PostCount>
-    </UserPost>
-    <UserPost>
-      <Username>风爱</Username>
-      <PostCount>6</PostCount>
-    </UserPost>
-    <UserPost>
-      <Username>icantspeak</Username>
-      <PostCount>6</PostCount>
-    </UserPost>
-    <UserPost>
-      <Username>yuxinyusb</Username>
-      <PostCount>6</PostCount>
-    </UserPost>
-    <UserPost>
-      <Username>草泥馬</Username>
-      <PostCount>6</PostCount>
     </UserPost>
     <UserPost>
       <Username>samurai515</Username>
+      <UserFrequent>false</UserFrequent>
       <PostCount>6</PostCount>
     </UserPost>
     <UserPost>
-      <Username>7thyuki</Username>
+      <Username>secass</Username>
+      <UserFrequent>false</UserFrequent>
       <PostCount>6</PostCount>
     </UserPost>
     <UserPost>
-      <Username>imrock</Username>
-      <PostCount>6</PostCount>
-    </UserPost>
-    <UserPost>
-      <Username>SoroSoro</Username>
-      <PostCount>5</PostCount>
-    </UserPost>
-    <UserPost>
-      <Username>tirara</Username>
+      <Username>世界atlast</Username>
+      <UserFrequent>false</UserFrequent>
       <PostCount>5</PostCount>
     </UserPost>
     <UserPost>
       <Username>lkj1837</Username>
+      <UserFrequent>false</UserFrequent>
       <PostCount>5</PostCount>
     </UserPost>
     <UserPost>
-      <Username>随便起个能注册</Username>
+      <Username>小小坛娘</Username>
+      <UserFrequent>false</UserFrequent>
       <PostCount>5</PostCount>
     </UserPost>
     <UserPost>
       <Username>Jane doe</Username>
+      <UserFrequent>false</UserFrequent>
+      <PostCount>5</PostCount>
+    </UserPost>
+    <UserPost>
+      <Username>tirara</Username>
+      <UserFrequent>false</UserFrequent>
       <PostCount>5</PostCount>
     </UserPost>
     <UserPost>
       <Username>恋音</Username>
+      <UserFrequent>false</UserFrequent>
       <PostCount>4</PostCount>
     </UserPost>
     <UserPost>
       <Username>514</Username>
+      <UserFrequent>false</UserFrequent>
       <PostCount>4</PostCount>
     </UserPost>
     <UserPost>
-      <Username>yotianming</Username>
+      <Username>7thyuki</Username>
+      <UserFrequent>false</UserFrequent>
       <PostCount>4</PostCount>
     </UserPost>
     <UserPost>
-      <Username>waitwaitw</Username>
+      <Username>NeverwinterN</Username>
+      <UserFrequent>false</UserFrequent>
+      <PostCount>4</PostCount>
+    </UserPost>
+    <UserPost>
+      <Username>yuxinyusb</Username>
+      <UserFrequent>false</UserFrequent>
       <PostCount>4</PostCount>
     </UserPost>
     <UserPost>
       <Username>yuban18568</Username>
+      <UserFrequent>false</UserFrequent>
       <PostCount>4</PostCount>
     </UserPost>
     <UserPost>
       <Username>Ila</Username>
-      <PostCount>4</PostCount>
-    </UserPost>
-    <UserPost>
-      <Username>云起云落</Username>
-      <PostCount>4</PostCount>
-    </UserPost>
-    <UserPost>
-      <Username>和你开心的</Username>
+      <UserFrequent>false</UserFrequent>
       <PostCount>4</PostCount>
     </UserPost>
     <UserPost>
       <Username>龙翼天涯</Username>
-      <PostCount>3</PostCount>
-    </UserPost>
-    <UserPost>
-      <Username>500斤诚信肥宅不含头</Username>
-      <PostCount>3</PostCount>
-    </UserPost>
-    <UserPost>
-      <Username>MomonohanaReina</Username>
+      <UserFrequent>false</UserFrequent>
       <PostCount>3</PostCount>
     </UserPost>
     <UserPost>
       <Username>无聊的阿里鲨</Username>
+      <UserFrequent>false</UserFrequent>
       <PostCount>3</PostCount>
     </UserPost>
     <UserPost>
-      <Username>apple30008</Username>
-      <PostCount>2</PostCount>
-    </UserPost>
-    <UserPost>
-      <Username>白见鬼</Username>
-      <PostCount>2</PostCount>
-    </UserPost>
-    <UserPost>
-      <Username>梦の幻想乡</Username>
-      <PostCount>2</PostCount>
-    </UserPost>
-    <UserPost>
-      <Username>zhchw</Username>
-      <PostCount>2</PostCount>
-    </UserPost>
-    <UserPost>
-      <Username>傳說の勇者魯卡醬</Username>
-      <PostCount>2</PostCount>
-    </UserPost>
-    <UserPost>
-      <Username>wengminjiebc</Username>
-      <PostCount>2</PostCount>
-    </UserPost>
-    <UserPost>
-      <Username>真情Neko</Username>
-      <PostCount>2</PostCount>
-    </UserPost>
-    <UserPost>
       <Username>Zutte</Username>
+      <UserFrequent>false</UserFrequent>
       <PostCount>2</PostCount>
     </UserPost>
     <UserPost>
-      <Username>麻翡</Username>
+      <Username>apple30008</Username>
+      <UserFrequent>false</UserFrequent>
       <PostCount>2</PostCount>
     </UserPost>
     <UserPost>
       <Username>sbflandre</Username>
-      <PostCount>2</PostCount>
-    </UserPost>
-    <UserPost>
-      <Username>半熟的fish</Username>
+      <UserFrequent>false</UserFrequent>
       <PostCount>2</PostCount>
     </UserPost>
     <UserPost>
       <Username>gbass2n</Username>
+      <UserFrequent>false</UserFrequent>
       <PostCount>2</PostCount>
     </UserPost>
     <UserPost>
-      <Username>乃来亚一卡</Username>
+      <Username>风爱</Username>
+      <UserFrequent>false</UserFrequent>
       <PostCount>2</PostCount>
     </UserPost>
     <UserPost>
-      <Username>69535339</Username>
+      <Username>傳說の勇者魯卡醬</Username>
+      <UserFrequent>false</UserFrequent>
       <PostCount>2</PostCount>
     </UserPost>
     <UserPost>
-      <Username>夜灵</Username>
+      <Username>MomonohanaReina</Username>
+      <UserFrequent>false</UserFrequent>
       <PostCount>2</PostCount>
     </UserPost>
     <UserPost>
-      <Username>chariot</Username>
+      <Username>waitwaitw</Username>
+      <UserFrequent>false</UserFrequent>
       <PostCount>2</PostCount>
-    </UserPost>
-    <UserPost>
-      <Username>dpandbw</Username>
-      <PostCount>2</PostCount>
-    </UserPost>
-    <UserPost>
-      <Username>nekosan</Username>
-      <PostCount>2</PostCount>
-    </UserPost>
-    <UserPost>
-      <Username>akagilnc</Username>
-      <PostCount>1</PostCount>
     </UserPost>
     <UserPost>
       <Username>MinMinNiem</Username>
-      <PostCount>1</PostCount>
-    </UserPost>
-    <UserPost>
-      <Username>wtj</Username>
-      <PostCount>1</PostCount>
-    </UserPost>
-    <UserPost>
-      <Username>智卖乐</Username>
-      <PostCount>1</PostCount>
-    </UserPost>
-    <UserPost>
-      <Username>碎堕</Username>
-      <PostCount>1</PostCount>
-    </UserPost>
-    <UserPost>
-      <Username>张拉菲大佐ii</Username>
+      <UserFrequent>false</UserFrequent>
       <PostCount>1</PostCount>
     </UserPost>
     <UserPost>
       <Username>EIENNOKAMISAMA</Username>
+      <UserFrequent>false</UserFrequent>
       <PostCount>1</PostCount>
     </UserPost>
     <UserPost>
       <Username>akiki</Username>
-      <PostCount>1</PostCount>
-    </UserPost>
-    <UserPost>
-      <Username>黔驴技穷</Username>
+      <UserFrequent>false</UserFrequent>
       <PostCount>1</PostCount>
     </UserPost>
     <UserPost>
       <Username>Legatz</Username>
+      <UserFrequent>false</UserFrequent>
       <PostCount>1</PostCount>
     </UserPost>
     <UserPost>
-      <Username>cleanery</Username>
-      <PostCount>1</PostCount>
-    </UserPost>
-    <UserPost>
-      <Username>cheryy</Username>
+      <Username>白见鬼</Username>
+      <UserFrequent>false</UserFrequent>
       <PostCount>1</PostCount>
     </UserPost>
     <UserPost>
       <Username>pzx199</Username>
-      <PostCount>1</PostCount>
-    </UserPost>
-    <UserPost>
-      <Username>VD</Username>
+      <UserFrequent>false</UserFrequent>
       <PostCount>1</PostCount>
     </UserPost>
     <UserPost>
       <Username>q513607247</Username>
+      <UserFrequent>false</UserFrequent>
       <PostCount>1</PostCount>
     </UserPost>
     <UserPost>
       <Username>ad54835244</Username>
+      <UserFrequent>false</UserFrequent>
       <PostCount>1</PostCount>
     </UserPost>
     <UserPost>
-      <Username>Wait丶</Username>
-      <PostCount>1</PostCount>
-    </UserPost>
-    <UserPost>
-      <Username>syj642875</Username>
+      <Username>智卖乐</Username>
+      <UserFrequent>false</UserFrequent>
       <PostCount>1</PostCount>
     </UserPost>
     <UserPost>
       <Username>jackthethird</Username>
+      <UserFrequent>false</UserFrequent>
       <PostCount>1</PostCount>
     </UserPost>
     <UserPost>
-      <Username>asdasfd</Username>
-      <PostCount>1</PostCount>
-    </UserPost>
-    <UserPost>
-      <Username>韵暗香</Username>
-      <PostCount>1</PostCount>
-    </UserPost>
-    <UserPost>
-      <Username>吹雪吹雪吹</Username>
+      <Username>随便起个能注册</Username>
+      <UserFrequent>false</UserFrequent>
       <PostCount>1</PostCount>
     </UserPost>
     <UserPost>
       <Username>街饮</Username>
+      <UserFrequent>false</UserFrequent>
+      <PostCount>1</PostCount>
+    </UserPost>
+    <UserPost>
+      <Username>chariot</Username>
+      <UserFrequent>false</UserFrequent>
+      <PostCount>1</PostCount>
+    </UserPost>
+    <UserPost>
+      <Username>dpandbw</Username>
+      <UserFrequent>false</UserFrequent>
+      <PostCount>1</PostCount>
+    </UserPost>
+    <UserPost>
+      <Username>nekosan</Username>
+      <UserFrequent>false</UserFrequent>
       <PostCount>1</PostCount>
     </UserPost>
   </DetailedUserCount>
